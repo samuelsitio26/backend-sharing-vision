@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "6644b5b2-1045-4bbc-bd97-28df2d546db8",
+    "name": "Sharing Vision Article",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39314330",
+    "_collection_link": "https://go.postman.co/collection/39314330-6644b5b2-1045-4bbc-bd97-28df2d546db8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Article - Invalid",
+      "item": [
+        {
+          "name": "Invalid - Content Pendek",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Pendek\",\r\n  \"content\": \"Validasi data adalah proses memeriksa input sebelum disimpan ke database. Pada REST API, validasi mencegah data kosong, terlalu pendek, atau berformat salah. Hasil validasi yang gagal biasanya dikembalikan dengan status 400 Bad Request disertai pesan yang menjelaskan kesalahannya kepada pengguna.\",\r\n  \"category\": \"Teknologi\",\r\n  \"status\": \"publish\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/article/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "article",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid - Title Pendek",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dasar-Dasar Validasi Data pada REST API\",\r\n  \"content\": \"Terlalu pendek\",\r\n  \"category\": \"Teknologi\",\r\n  \"status\": \"publish\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/article/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "article",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid - Category Pendek",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dasar-Dasar Validasi Data pada REST API\",\r\n  \"content\": \"Validasi data adalah proses memeriksa input sebelum disimpan ke database. Pada REST API, validasi mencegah data kosong, terlalu pendek, atau berformat salah. Hasil validasi yang gagal biasanya dikembalikan dengan status 400 Bad Request disertai pesan yang menjelaskan kesalahannya kepada pengguna.\",\r\n  \"category\": \"Te\",\r\n  \"status\": \"publish\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/article/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "article",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid - Status Salah",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dasar-Dasar Validasi Data pada REST API\",\r\n  \"content\": \"Validasi data adalah proses memeriksa input sebelum disimpan ke database. Pada REST API, validasi mencegah data kosong, terlalu pendek, atau berformat salah. Hasil validasi yang gagal biasanya dikembalikan dengan status 400 Bad Request disertai pesan yang menjelaskan kesalahannya kepada pengguna.\",\r\n  \"category\": \"Teknologi\",\r\n  \"status\": \"terbit\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/article/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "article",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Create Article",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Dasar-Dasar Validasi Data pada REST API\",\r\n  \"content\": \"Validasi data adalah proses memeriksa input sebelum disimpan ke database. Pada REST API, validasi mencegah data kosong, terlalu pendek, atau berformat salah. Hasil validasi yang gagal biasanya dikembalikan dengan status 400 Bad Request disertai pesan yang menjelaskan kesalahannya kepada pengguna.\",\r\n  \"category\": \"Teknologi\",\r\n  \"status\": \"thrash\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/article/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "article",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Articles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/article/10/0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "article",
+            "10",
+            "0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Article by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/article/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "article",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Article",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\r\n     \"title\": \"Pengenalan REST API dengan Golang dan MySQL (Revisi)\",\r\n     \"content\": \"REST API adalah cara aplikasi saling bertukar data melalui protokol HTTP. Pada artikel ini dibahas pembuatan REST API sederhana menggunakan bahasa Go dengan framework Gin dan database MySQL. API memiliki lima endpoint untuk membuat, menampilkan, mengubah, dan menghapus artikel, lengkap dengan validasi data.\",\r\n     \"category\": \"Teknologi\",\r\n     \"status\": \"draft\"\r\n   }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/article/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "article",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Article",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/article/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "article",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
