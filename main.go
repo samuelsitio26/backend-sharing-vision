@@ -8,7 +8,8 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
-
+	"os"
+	
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
@@ -55,7 +56,12 @@ func validate(in ArticleInput) string {
 
 func main() {
 	var err error
-	db, err = sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/article?parseTime=true&multiStatements=true")
+	dsn := os.Getenv("DB_DSN")
+	if dsn == "" {
+		// Pengaturan bawaan untuk Laragon lokal
+		dsn = "root:@tcp(127.0.0.1:3306)/article?parseTime=true&multiStatements=true"
+	}
+	db, err = sql.Open("mysql", dsn)
 	if err != nil {
 		log.Fatal(err)
 	}
